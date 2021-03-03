@@ -82,7 +82,9 @@ const createBoard = (cards) => {
 
 const startGame = () => {
   $start.classList.add("hidden")
+  steps = 0
   createBoard(cards)
+  clearInterval(timerInterval)
   countTime()
 }
 const calcScore = () => {
@@ -98,7 +100,7 @@ const calcScore = () => {
   }
   const openCards = document.getElementsByClassName("open")
   if (openCards.length / 2 === cards.length) {
-    clearInterval(timerInterval)
+    // clearInterval(timerInterval)
     setTimeout(() => {
       Swal.fire({
         title: message,

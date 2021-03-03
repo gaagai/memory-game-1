@@ -83,6 +83,7 @@ const createBoard = (cards) => {
 const startGame = () => {
   $start.classList.add("hidden")
   steps = 0
+  $steps.innerHTML = steps
   createBoard(cards)
   clearInterval(timerInterval)
   countTime()
@@ -118,7 +119,7 @@ const calcScore = () => {
           startGame()
         }
       })
-      $start.classList.remove("hide")
+      $start.classList.remove("hidden")
     }, 600)
   }
 }

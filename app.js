@@ -5,15 +5,15 @@ const $start = document.getElementById("start")
 const $board = document.getElementById("board")
 
 const cards = [
-  {
-    title: "berries",
-    url: "https://cdn.pixabay.com/photo/2010/12/13/10/05/berries-2277_1280.jpg",
-  },
-  {
-    title: "pears",
-    url:
-      "https://cdn.pixabay.com/photo/2016/07/22/09/59/fruit-1534494_1280.jpg",
-  },
+  // {
+  //   title: "berries",
+  //   url: "https://cdn.pixabay.com/photo/2010/12/13/10/05/berries-2277_1280.jpg",
+  // },
+  // {
+  //   title: "pears",
+  //   url:
+  //     "https://cdn.pixabay.com/photo/2016/07/22/09/59/fruit-1534494_1280.jpg",
+  // },
   {
     title: "carrots",
     url:
@@ -83,9 +83,11 @@ const createBoard = (cards) => {
 const startGame = () => {
   $start.classList.add("hidden")
   steps = 0
+  timer = 60
   $steps.innerHTML = steps
+  $timer.innerText = timer
   createBoard(cards)
-  clearInterval(timerInterval)
+
   countTime()
 }
 const calcScore = () => {
@@ -101,7 +103,6 @@ const calcScore = () => {
   }
   const openCards = document.getElementsByClassName("open")
   if (openCards.length / 2 === cards.length) {
-    // clearInterval(timerInterval)
     setTimeout(() => {
       Swal.fire({
         title: message,
@@ -120,6 +121,7 @@ const calcScore = () => {
         }
       })
       $start.classList.remove("hidden")
+      clearInterval(timerInterval)
     }, 600)
   }
 }

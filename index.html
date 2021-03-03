@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/animate.css@4.0.0/animate.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <title>Memory Game</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Memory Game</h1>
+      <div class="dashboard">
+        <div>Score: <span id="score">10</span></div>
+        <div>Steps: <span id="steps">0</span></div>
+        <div>Timer: <span id="timer">60</span></div>
+      </div>
+      <ul id="board"></ul>
+      <button id="start">Start Game</button>
+      <div class="result"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -46,6 +46,24 @@ const countTime = () => {
 
     if (timer === 0) {
       clearInterval(timerInterval)
+      Swal.fire({
+        title: "Out of time",
+        icon: "error",
+        showConfirmButton: true,
+        confirmButtonText: "Play Again",
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          startGame()
+        }
+      })
+      $start.classList.remove("hidden")
+      clearInterval(timerInterval)
     }
   }, 1000)
 }
